@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: plot-on-the-go
+Version: 0.1
+Summary: Update a graph while you plot!
+Home-page: https://github.com/nayakrujul/plot-on-the-go
+Author: Rujul Nayak
+Author-email: rujulnayak@outlook.com
+License: Apache
+Download-URL: https://github.com/nayakrujul/plot-on-the-go/archive/refs/tags/v_01.tar.gz
+Keywords: plot,graph
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+
+Update a graph while you plot - read the docs at https://www.github.com/nayakrujul/plot-on-the-go
+

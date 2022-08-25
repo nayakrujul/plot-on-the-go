@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+plot_on_the_go/__init__.py
+plot_on_the_go/potg.py
+plot_on_the_go.egg-info/PKG-INFO
+plot_on_the_go.egg-info/SOURCES.txt
+plot_on_the_go.egg-info/dependency_links.txt
+plot_on_the_go.egg-info/requires.txt
+plot_on_the_go.egg-info/top_level.txt
