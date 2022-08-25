@@ -1,18 +1,19 @@
 from setuptools import setup, find_packages
 
-long_description = 'Default classes - read the docs at https://www.github.com/nayakrujul/default-class'
+long_description = 'Update a graph while you plot - read the docs at https://www.github.com/nayakrujul/plot-on-the-go'
 
 setup(
-  name = 'default-class',
-  version = '1.1',
+  name = 'plot-on-the-go',
+  version = '0.1',
   license='Apache',
-  description = 'Default classes',
+  description = 'Update a graph while you plot!',
   author = 'Rujul Nayak',
   author_email = 'rujulnayak@outlook.com',
-  url = 'https://github.com/nayakrujul/default-class',
-  download_url = 'https://github.com/nayakrujul/default-class/archive/refs/tags/v_01.tar.gz',
-  keywords = ['class', 'default'],
+  url = 'https://github.com/nayakrujul/plot-on-the-go',
+  download_url = 'https://github.com/nayakrujul/plot-on-the-go/archive/refs/tags/v_01.tar.gz',
+  keywords = ['plot', 'graph'],
   install_requires=[
+    'pygame'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha', 
