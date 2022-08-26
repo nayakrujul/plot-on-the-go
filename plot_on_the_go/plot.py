@@ -1,4 +1,4 @@
-import pygame, threading, time, math
+import pygame
 
 pygame.init()
 
@@ -170,11 +170,10 @@ class Grapher:
         self.__x_max = x_max
         self.__window = pygame.display.set_mode((850, 600))
         pygame.display.set_caption("PlotOnTheGo Grapher")
-        self.__update_window = True
         self.__points = []
         self.__legend = {}
         self.__title = ''
-        threading.Thread(target=self.__loop).start()
+        self.__update()
     def __draw_axis(self):
         pygame.draw.line(self.__window, colours['black'], (50, 50), (50, 550), 10)
         pygame.draw.line(self.__window, colours['black'], (50, 550), (800, 550), 10)
@@ -218,20 +217,16 @@ class Grapher:
             showMessage(self.__window, l, 800, 400 + (i*20), c, 20)
     def __draw_title(self):
         showMessage(self.__window, self.__title, 425, 25, size=30)
-    def __loop(self):
-        self.__looping = True
-        while self.__looping:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.__looping = False
-            if self.__update_window:
-                self.__update_window = False
-                self.__window.fill(colours['white'])
-                self.__axis()
-                self.__draw_points()
-                self.__draw_legend()
-                self.__draw_title()
-                pygame.display.update()
+    def __update(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+        self.__window.fill(colours['white'])
+        self.__axis()
+        self.__draw_points()
+        self.__draw_legend()
+        self.__draw_title()
+        pygame.display.update()
     def plot_point(self, x, y, colour):
         if x < 0 or x > self.__x_max or y < 0:
             raise ValueError(f'Invalid coordinates ({x}, {y})')
@@ -247,15 +242,15 @@ class Grapher:
             if not all(0 <= i <= 255 for i in colour):
                 raise ValueError(f'Invalid colour {colour!r}')
         self.__points.append((x, y, colour))
-        self.__update_window = True
+        self.__update()
     def legend(self, **items):
         for colour, label in items.items():
             if colour.lower().replace('_', ' ') not in colours:
                 raise ValueError(f'Invalid colour {colour!r}')
             self.__legend[colours[colour.lower().replace('_', ' ')]] = str(label)
-        self.__update_window = True
+        self.__update()
     def title(self, _title):
         self.__title = str(_title)
-        self.__update_window = True
+        self.__update()
     def stop(self):
-        self.__looping = False
+        pygame.quit()
