@@ -11,8 +11,7 @@ $ pip install plot-on-the-go
 
 ## Example output
 
-![example](https://user-images.githubusercontent.com/55329600/186906983-062dc507-71d8-4298-bc9a-c6c8679ae764.gif)
-
+https://user-images.githubusercontent.com/55329600/186910354-3ce5e392-3079-4a6a-8cbc-37ba567325e6.mov
 
 Code (sorting functions not shown):
 
