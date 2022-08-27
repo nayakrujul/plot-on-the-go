@@ -38,8 +38,7 @@ for length in range(1001):
     grapher.plot_point(length, b, 'red')
     grapher.plot_point(length, m, 'blue')
 
-while True:
-    pass
+grapher.show()
 ```
 
 Note: this program uses [random-typing](https://github.com/nayakrujul/typing-tools) to generate random lists of integers
@@ -83,6 +82,12 @@ Colours must be from the table linked in the accepted colours section.
 
 ```python
 grapher.title('My graph')
+```
+
+### Show the graoh
+
+```python
+grapher.show()
 ```
 
 ## Accepted colours
