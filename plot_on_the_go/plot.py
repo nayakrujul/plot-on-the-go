@@ -254,3 +254,8 @@ class Scatter:
         self.__update()
     def stop(self):
         pygame.quit()
+    def show(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    return
