@@ -9,7 +9,9 @@ From PIP:
 $ pip install plot-on-the-go
 ```
 
-## Example output
+## Scatter
+
+### Example output
 
 https://user-images.githubusercontent.com/55329600/186910354-3ce5e392-3079-4a6a-8cbc-37ba567325e6.mov
 
@@ -42,8 +44,6 @@ grapher.show()
 ```
 
 Note: this program uses [random-typing](https://github.com/nayakrujul/typing-tools) to generate random lists of integers
-
-## Usage
 
 ### Import the module:
 
