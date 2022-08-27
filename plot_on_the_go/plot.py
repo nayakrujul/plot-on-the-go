@@ -259,3 +259,64 @@ class Scatter:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     return
+
+class Bar:
+    def __init__(self, func=sum):
+        self.__func = func
+        self.__window = pygame.display.set_mode((850, 600))
+        pygame.display.set_caption("PlotOnTheGo Grapher")
+        self.__points = {}
+        self.__title = ''
+        self.__update()
+    def __draw_axis(self):
+        pygame.draw.line(self.__window, colours['black'], (50, 50), (50, 550), 10)
+        pygame.draw.line(self.__window, colours['black'], (50, 550), (800, 550), 10)
+    def __x_axis_labels(self):
+        x = 750 / (len(self.__points) + 1)
+        for i, l in enumerate(self.__points.keys()):
+            showMessage(self.__window, l, 50 + (i+1)*x, 570)
+    def __y_axis_nums(self):
+        y = (max((self.__func(i) for i in self.__points.values()), default=1) or 1) / 10
+        for j in range(11):
+            n = y * j
+            if n < 10:
+                d = str(round(n, 1))
+            elif n < 100:
+                d = str(round(n))
+            elif n < 100000:
+                d = str(round(n / 1000)) + 'k'
+            else:
+                d = str(round(n / 1000000, 1)) + 'm'
+            showMessage(self.__window, d, 25, 550 - (j*50))
+    def __draw_bars(self):
+        l = [self.__func(v) for v in self.__points.values()]
+        m = max((self.__func(i) for i in self.__points.values()), default=1) or 1
+        x = 750 / (len(self.__points) + 1)
+        for i, y in enumerate(l):
+            pygame.draw.rect(self.__window, colours['black'], ((i+1)*x, 550 - (y/m)*500, 100, (y/m)*500))
+    def __draw_title(self):
+        showMessage(self.__window, self.__title, 425, 25, size=30)
+    def __update(self):
+        self.__window.fill(colours['white'])
+        self.__draw_axis()
+        self.__x_axis_labels()
+        self.__y_axis_nums()
+        self.__draw_bars()
+        self.__draw_title()
+        pygame.display.update()
+    def add_num(self, label, y):
+        if label in self.__points:
+            self.__points[label].append(y)
+        else:
+            self.__points[label] = [y]
+        self.__update()
+    def title(self, _title):
+        self.__title = str(_title)
+        self.__update()
+    def stop(self):
+        pygame.quit()
+    def show(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    return
