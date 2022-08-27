@@ -165,7 +165,7 @@ def showMessage(window, message, x, y, colour=colours['black'], size=15):
     textArea.center = x, y
     window.blit(renderedText, textArea)
 
-class Grapher:
+class Scatter:
     def __init__(self, x_max):
         self.__x_max = x_max
         self.__window = pygame.display.set_mode((850, 600))
