@@ -16,11 +16,11 @@ https://user-images.githubusercontent.com/55329600/186910354-3ce5e392-3079-4a6a-
 Code (sorting functions not shown):
 
 ```python
-from plot_on_the_go.plot import Grapher
+from plot_on_the_go.plot import Scatter
 from random_typing import List, Int
 import timeit
 
-grapher = Grapher(1000)
+grapher = Scatter(1000)
 
 grapher.legend(red='bubble', blue='merge')
 grapher.title('Bubble sort vs Merge sort')
@@ -49,13 +49,13 @@ Note: this program uses [random-typing](https://github.com/nayakrujul/typing-too
 ### Import the module:
 
 ```python
-from plot_on_the_go.plot import Grapher
+from plot_on_the_go.plot import Scatter
 ```
 
 ### Initialise a grapher
 
 ```python
-grapher = Grapher(1000)
+grapher = Scatter(1000)
 ```
 
 The parameter is the maximum x-value
