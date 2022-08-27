@@ -84,10 +84,91 @@ Colours must be from the table linked in the accepted colours section.
 grapher.title('My graph')
 ```
 
-### Show the graoh
+### Show the graph
 
 ```python
 grapher.show()
+```
+
+### Stop the graph being shown
+
+```python
+grapher.stop()
+```
+
+## Bar
+
+### Example output
+
+https://user-images.githubusercontent.com/55329600/187031754-399d9382-4226-4d83-bc6c-67a42401d3dd.mov
+
+Code (sorting functions not shown):
+
+```python
+from plot_on_the_go.plot import Bar
+from random_typing import List, Int
+import timeit
+
+grapher = Bar()
+
+grapher.title('Bubble sort vs Merge sort - runs/sec')
+
+for length in range(1001):
+    l = List(Int(1, 100), length)
+
+    b = 1 / timeit.timeit('bubble_sort(lst)',
+                          globals={'lst': next(l), 'bubble_sort': bubble_sort},
+                          number=1)
+    m = 1 / timeit.timeit('merge_sort(lst)',
+                          globals={'lst': next(l), 'merge_sort': merge_sort},
+                          number=1)
+
+    grapher.add_num('bubble', b)
+    grapher.add_num('merge', m)
+
+grapher.show()
+```
+
+### Import the module:
+
+```python
+from plot_on_the_go.plot import Scatter
+```
+
+### Initialise a grapher
+
+```python
+grapher = Bar()
+```
+
+The parameter (optional) is the function to apply to a list of numbers, which should return a number. It defaults to `sum`
+
+### Add a number
+
+```python
+grapher.plot_point('a', 1)
+```
+
+The parameters are:
+* `label` - the label to add the point to
+* `y` - the number to add
+
+### Add a title
+
+```python
+grapher.title('My graph')
+```
+
+### Show the graph
+
+```python
+grapher.show()
+```
+
+### Stop the graph being shown
+
+```python
+grapher.stop()
 ```
 
 ## Accepted colours
