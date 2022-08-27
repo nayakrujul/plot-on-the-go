@@ -4,7 +4,7 @@ long_description = 'Update a graph while you plot - read the docs at https://www
 
 setup(
   name = 'plot-on-the-go',
-  version = '1.1',
+  version = '2.0',
   license='Apache',
   description = 'Update a graph while you plot!',
   author = 'Rujul Nayak',
